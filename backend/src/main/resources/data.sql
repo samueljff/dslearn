@@ -22,8 +22,11 @@ INSERT INTO tb_resource(title, description, position, img_Uri, type, offer_id) V
 INSERT INTO tb_resource(title, description, position, img_Uri, type, offer_id) VALUES ('Forum', 'Tire suas duvidas', 2, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 2, 1);
 INSERT INTO tb_resource(title, description, position, img_Uri, type, offer_id) VALUES ('Lives', 'Lives exclusivas para a turma', 3, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 0, 1);
 
-INSERT INTO tb_section(title, description, position, img_Uri, resouce_id, prerequisite_id) VALUES('Capitulo 1', 'Neste Capitulo vamos começar', 1, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 1, null);
-INSERT INTO tb_section(title, description, position, img_Uri, resouce_id, prerequisite_id) VALUES('Capitulo 2', 'Neste Capitulo vamos continuar', 2, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 1, 1);
-INSERT INTO tb_section(title, description, position, img_Uri, resouce_id, prerequisite_id) VALUES('Capitulo 3', 'Neste Capitulo vamos Finalizar', 3, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 1, 2);
+INSERT INTO tb_section(title, description, position, img_Uri, resouce_id, prerequisite_id) VALUES ('Capitulo 1', 'Neste Capitulo vamos começar', 1, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 1, null);
+INSERT INTO tb_section(title, description, position, img_Uri, resouce_id, prerequisite_id) VALUES ('Capitulo 2', 'Neste Capitulo vamos continuar', 2, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 1, 1);
+INSERT INTO tb_section(title, description, position, img_Uri, resouce_id, prerequisite_id) VALUES ('Capitulo 3', 'Neste Capitulo vamos Finalizar', 3, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 1, 2);
+
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update)VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2020-11-20T013:00:00Z', null, true, false);
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update)VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2020-11-20T013:00:00Z', null, true, false);
 
 
