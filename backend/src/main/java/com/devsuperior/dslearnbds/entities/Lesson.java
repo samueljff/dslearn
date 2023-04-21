@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -41,6 +42,12 @@ public abstract class Lesson implements Serializable {
 			}
 	)
 	private Set <Enrollment> enrollmentsdone = new HashSet<>();
+	
+	@OneToMany(mappedBy = "lesson")
+	private Set<Deliver> delivers = new HashSet<>();
+	
+	@OneToMany(mappedBy = "lesson")
+	private Set<Topic> topics = new HashSet<>();
 	
 	public Lesson() {
 	}
