@@ -95,6 +95,14 @@ public abstract class Lesson implements Serializable {
 		return enrollmentsdone;
 	}
 
+	public Set<Deliver> getDelivers() {
+		return delivers;
+	}
+
+	public Set<Topic> getTopics() {
+		return topics;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

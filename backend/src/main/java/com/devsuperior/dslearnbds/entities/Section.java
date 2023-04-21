@@ -107,6 +107,10 @@ public class Section implements Serializable {
 		this.prerequisite = prerequisite;
 	}
 
+	public Set<Lesson> getLessons() {
+		return lessons;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
