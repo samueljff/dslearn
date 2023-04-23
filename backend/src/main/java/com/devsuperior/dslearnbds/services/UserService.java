@@ -26,6 +26,9 @@ public class UserService implements UserDetailsService {
 	private static Logger logger = org.slf4j.LoggerFactory.getLogger(UserService.class);
 	
 	@Autowired
+	private AuthService authService;
+	
+	@Autowired
 	private UserRepository userRepository;
 
 	@Transactional(readOnly = true)
@@ -37,6 +40,7 @@ public class UserService implements UserDetailsService {
 
 	@Transactional(readOnly = true)
 	public UserDTO findById(Long id) {
+		authService.validateSelfOrAdmin(id);
 		Optional<User> obj = userRepository.findById(id);
 		User entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found!"));
 		return new UserDTO(entity);
