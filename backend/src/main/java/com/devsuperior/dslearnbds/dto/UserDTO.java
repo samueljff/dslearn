@@ -12,27 +12,25 @@ public class UserDTO implements Serializable{
 	private Long id;
 	private String name;
 	private String email;
-	private String password;
 	
 	private Set<RoleDTO> roles = new HashSet<>(); 
 	
 	public UserDTO() {
 	}
 
-	public UserDTO(Long id, String name, String email, String password) {
+	public UserDTO(Long id, String name, String email) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.password = password;
 	}
 	
-	public UserDTO(User user) {
-		id = user.getId();
-		name = user.getName();
-		email = user.getEmail();
-		password = user.getPassword();
-		user.getRoles().forEach(role -> this.roles.add(new RoleDTO(role)));
+	public UserDTO(User entity) {
+		id = entity.getId();
+		name = entity.getName();
+		email = entity.getEmail();
+		
+		entity.getRoles().forEach(role -> this.roles.add(new RoleDTO(role)));
 	}
 
 	public Long getId() {
@@ -57,14 +55,6 @@ public class UserDTO implements Serializable{
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	public Set<RoleDTO> getRoles() {
